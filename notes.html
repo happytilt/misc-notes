@@ -1,0 +1,750 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Notes</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1e16c31c-8f4a-80af-83fa-c058e9c932ae" class="page sans"><header><h1 class="page-title">Notes</h1><p class="page-description"></p></header><div class="page-body"><div id="1e16c31c-8f4a-80d0-bc02-d0183cd1b4cf" class="column-list"><div id="1e16c31c-8f4a-8025-8a3e-d96bc757522c" style="width:50%" class="column"><h3 id="1e16c31c-8f4a-80d9-9508-d97c1e29e443" class="">Variables &amp; Data Types</h3><ul id="1e16c31c-8f4a-8017-8d71-df3c60999c01" class="bulleted-list"><li style="list-style-type:disc"><strong>Variables</strong> store data values.</li></ul><ul id="1e16c31c-8f4a-804b-ab43-da23c0d53ed7" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Types</strong>:<ul id="1e16c31c-8f4a-80e8-9249-f7cdfdd1a888" class="bulleted-list"><li style="list-style-type:circle"><code>int</code> (integers)</li></ul><ul id="1e16c31c-8f4a-80cc-965e-dcc1b4fe3175" class="bulleted-list"><li style="list-style-type:circle"><code>float</code> (decimal numbers)</li></ul><ul id="1e16c31c-8f4a-8010-b3df-f9a454438633" class="bulleted-list"><li style="list-style-type:circle"><code>str</code> (strings/text)</li></ul><ul id="1e16c31c-8f4a-80cd-8d78-fbdfa2c578a0" class="bulleted-list"><li style="list-style-type:circle"><code>bool</code> (True/False)</li></ul><ul id="1e16c31c-8f4a-80cb-b249-d055c481476f" class="bulleted-list"><li style="list-style-type:circle"><code>NoneType</code> (None)</li></ul></li></ul><ul id="1e16c31c-8f4a-80e5-9c1f-dd5e177a8472" class="bulleted-list"><li style="list-style-type:disc"><code>print(type(var))</code> - prints out data type of var</li></ul><ul id="1e16c31c-8f4a-80ff-b157-d55104ce95c5" class="bulleted-list"><li style="list-style-type:disc">Example:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-8075-9f7c-c6debb7b0143" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">name = &quot;Alice&quot;
+age = 25
+height = 5.9
+is_student = True</code></pre></li></ul></div><div id="1e16c31c-8f4a-80e8-a719-d47badb46af0" style="width:50%" class="column"><h3 id="1e16c31c-8f4a-800e-ab64-d8ed186d9d13" class="">Numbers</h3><ul id="1e16c31c-8f4a-80f7-a1ee-c2815dc416ed" class="bulleted-list"><li style="list-style-type:disc"><strong>int</strong>: whole numbers, e.g., <code>5</code></li></ul><ul id="1e16c31c-8f4a-80ba-9a02-cac76e76a576" class="bulleted-list"><li style="list-style-type:disc"><strong>float</strong>: decimal numbers, e.g., <code>5.5</code></li></ul><ul id="1e16c31c-8f4a-8077-a21c-d5f3f32d85cd" class="bulleted-list"><li style="list-style-type:disc">Math operations:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-8016-baec-e154bc56e06a" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">+, -, *, /, % (modulus) // (floor division), ** (exponent)
+</code></pre></li></ul><p id="1e16c31c-8f4a-80e0-a494-c1b9c49e0130" class="">
+</p><h3 id="1e16c31c-8f4a-8004-bc2f-cd928edadd31" class="">Booleans &amp; Operators</h3><ul id="1e16c31c-8f4a-8030-8957-ddf3728ef2e2" class="bulleted-list"><li style="list-style-type:disc"><strong>Boolean</strong>: <code>True</code> or <code>False</code></li></ul><ul id="1e16c31c-8f4a-800e-bbf5-e890b0fa581e" class="bulleted-list"><li style="list-style-type:disc"><strong>Comparison operators</strong>: <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li></ul><ul id="1e16c31c-8f4a-804b-8ff4-ceb61426513b" class="bulleted-list"><li style="list-style-type:disc"><strong>Logical operators</strong>: <code>and</code>, <code>or</code>, <code>not</code></li></ul></div></div><h3 id="1e16c31c-8f4a-802d-b778-f278375f75f8" class="">= (single equals) vs == (double equals)</h3><ul id="1e16c31c-8f4a-8082-bf4a-c6846c06a972" class="bulleted-list"><li style="list-style-type:disc">Single Equals<ul id="1e16c31c-8f4a-80da-b81e-f0fb0322f664" class="bulleted-list"><li style="list-style-type:circle">Assignment operator, not for comparison</li></ul></li></ul><ul id="1e16c31c-8f4a-8027-86a0-cc4e6550879c" class="bulleted-list"><li style="list-style-type:disc">Double Equals<ul id="1e16c31c-8f4a-80e0-9555-cb55961aa3d6" class="bulleted-list"><li style="list-style-type:circle">Equality comparison operator, meant for comparison and returns True/False</li></ul></li></ul><hr id="1e16c31c-8f4a-8007-a9be-fc1a2b63d238"/><h3 id="1e16c31c-8f4a-8044-a3c2-f41d602af8ea" class="">String Formatting</h3><ul id="1e16c31c-8f4a-80fa-9b91-f112467a57ad" class="bulleted-list"><li style="list-style-type:disc">Inserting variables into strings:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-8086-8549-e108575a6e2a" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">name = &quot;Bob&quot;
+print(f&quot;Hello, {name}&quot;)
+print(&quot;Hello, {} {}&quot;.format(first, last))</code></pre></li></ul><ul id="1e16c31c-8f4a-8023-a06b-f5d8e5b42292" class="bulleted-list"><li style="list-style-type:disc"><strong>Escape characters</strong> you can use inside strings<ul id="1e16c31c-8f4a-80a9-afc7-cd3d45ff3f3f" class="bulleted-list"><li style="list-style-type:circle"><code>\n</code> - new line</li></ul><ul id="1e16c31c-8f4a-8017-932f-e3f93ad66036" class="bulleted-list"><li style="list-style-type:circle"> <code>\t</code> - tab indent</li></ul><ul id="1e16c31c-8f4a-80c9-93d1-e7d460ee457e" class="bulleted-list"><li style="list-style-type:circle"><code>\\</code> - backslash (\)</li></ul><ul id="1e16c31c-8f4a-802e-9fd2-ffd7a7bc5032" class="bulleted-list"><li style="list-style-type:circle"><code>\&#x27; or \&quot;</code> - single/double quote</li></ul><ul id="1e16c31c-8f4a-80fd-bb5f-e8826ab634c2" class="bulleted-list"><li style="list-style-type:circle"><code>\r</code> - Carriage return (move to beginning of line)</li></ul></li></ul><ul id="1e16c31c-8f4a-8059-895e-c97bf30b222f" class="bulleted-list"><li style="list-style-type:disc"><strong>{} placeholders</strong><ul id="1e16c31c-8f4a-80d1-9bab-e9a06e3b1df5" class="bulleted-list"><li style="list-style-type:circle">.format() is a string method used to insert variables (or values) into a string.</li></ul></li></ul><ul id="1e16c31c-8f4a-804f-80ae-e20babcd1c25" class="bulleted-list"><li style="list-style-type:disc"><strong>String prefixes</strong> change how the string behaves when it is created<ul id="1e16c31c-8f4a-8081-98ae-ccd5d6f8dceb" class="bulleted-list"><li style="list-style-type:circle">r (Raw string) - Keeps backslashes (\) literally</li></ul><ul id="1e16c31c-8f4a-804a-a52f-d658095ecc9d" class="bulleted-list"><li style="list-style-type:circle">f (Formatted string) - Better than .format()</li></ul><ul id="1e16c31c-8f4a-80c5-bee5-dab81a847178" class="bulleted-list"><li style="list-style-type:circle">b (Byte string) - Stores binary data and not text</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-80a1-b9f3-e338a65ae7e1" class="code"><code class="language-JavaScript">name = &quot;Alice&quot;
+print(f&quot;Hello, {name}&quot;)  # f-string: inserts variable
+print(r&quot;C:\Users\Alice&quot;)  # r-string: keeps \\
+print(b&quot;Hello&quot;)           # b-string: bytes, not text</code></pre></li></ul><hr id="1e16c31c-8f4a-80ec-937d-d14926b1d554"/><p id="1e16c31c-8f4a-8079-8277-f827bb4a1dd2" class="">
+</p><h1 id="1e16c31c-8f4a-8005-afac-ffbe0ef45c9a" class="">Data Structures</h1><ul id="1e16c31c-8f4a-801a-9b79-ebfa86a69304" class="bulleted-list"><li style="list-style-type:disc"><strong>Tuple</strong> (<code>()</code>): A tuple is <strong>immutable</strong>, meaning once you create it, you can&#x27;t change its elements. It&#x27;s great for storing fixed data—like coordinates, RGB color values, or database records.</li></ul><ul id="1e16c31c-8f4a-805a-808d-ec2c2a5c789e" class="bulleted-list"><li style="list-style-type:disc"><strong>List</strong> (<code>[]</code>): A list is <strong>ordered</strong> and <strong>mutable</strong>, making it ideal for situations where you need to add, remove, or modify items dynamically—such as managing tasks in a to-do list or storing user input.</li></ul><ul id="1e16c31c-8f4a-809e-a5b6-ea682244df6b" class="bulleted-list"><li style="list-style-type:disc"><strong>Set</strong> (<code>{}</code>): A set is <strong>unordered</strong> and contains <strong>unique elements</strong> only, meaning duplicates are automatically removed. It&#x27;s useful for operations like finding unique values, checking membership quickly, or performing mathematical set operations (union, intersection).</li></ul><ul id="1e16c31c-8f4a-80ea-8dda-d464abad94fa" class="bulleted-list"><li style="list-style-type:disc"><strong>Dictionary</strong> (<code>{key: value}</code>): A dictionary allows you to store <strong>key-value pairs</strong>, making it ideal when you need to map one piece of data to another—like storing user profiles (<code>{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25}</code>) or caching search results.</li></ul><hr id="1e16c31c-8f4a-807f-873f-d8cb9c7d395b"/><div id="1e16c31c-8f4a-80b4-871c-e5f92e663ef0" class="column-list"><div id="1e16c31c-8f4a-80f0-ae81-f68fc50b187b" style="width:50%" class="column"><h3 id="1e16c31c-8f4a-8045-a1c6-e116d4e2ba1e" class="">Tuples</h3><ul id="1e16c31c-8f4a-8028-8299-c9223577aaeb" class="bulleted-list"><li style="list-style-type:disc"><strong>Immutable, </strong>iterable ordered collection.</li></ul><ul id="1e16c31c-8f4a-809d-8327-f4ae8e5441cf" class="bulleted-list"><li style="list-style-type:disc">Defined with parentheses <code>()</code>.</li></ul><p id="1e16c31c-8f4a-80ea-8cc9-ffe82875012d" class="">Example:<div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-806b-9938-d1fb79b0b543" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_tuple = (1, 2, 3)</code></pre></div></p></div><div id="1e16c31c-8f4a-8055-ace5-e923e299d027" style="width:50%" class="column"><h3 id="1e16c31c-8f4a-8006-8aae-c5b419c5f30f" class="">Lists</h3><ul id="1e16c31c-8f4a-80ef-a074-d6ecc2349652" class="bulleted-list"><li style="list-style-type:disc"><strong>Mutable, iterable </strong>ordered collection.</li></ul><ul id="1e16c31c-8f4a-801c-b9ec-f97b32f47573" class="bulleted-list"><li style="list-style-type:disc">Defined with brackets <code>[]</code>.</li></ul><ul id="1e16c31c-8f4a-802e-a37e-c5673e133607" class="toggle"><li><details open=""><summary>Methods</summary><ul id="1e16c31c-8f4a-80f6-aafd-cdf14b00edac" class="bulleted-list"><li style="list-style-type:disc"><code>append(item)</code> – Adds an item to the end of the list.</li></ul><ul id="1e16c31c-8f4a-806f-9ac2-f2c71fc717b5" class="bulleted-list"><li style="list-style-type:disc"><code>extend(iterable)</code> – Extends the list by appending all elements from an iterable.</li></ul><ul id="1e16c31c-8f4a-805f-8541-c9c1015c987b" class="bulleted-list"><li style="list-style-type:disc"><code>insert(index, item)</code> – Inserts an item at a specific index.</li></ul><ul id="1e16c31c-8f4a-80cd-9340-e3b42e0926ed" class="bulleted-list"><li style="list-style-type:disc"><code>remove(item)</code> – Removes the first occurrence of the specified item.</li></ul><ul id="1e16c31c-8f4a-8000-80ec-c38223a7089f" class="bulleted-list"><li style="list-style-type:disc"><code>pop(index)</code> – Removes and returns the item at the specified index (or the last item if no index is given).</li></ul><ul id="1e16c31c-8f4a-8001-a36e-c555499b9e33" class="bulleted-list"><li style="list-style-type:disc"><code>index(item)</code> – Returns the index of the first occurrence of the item.</li></ul><ul id="1e16c31c-8f4a-8079-9f65-e82e0aa91df5" class="bulleted-list"><li style="list-style-type:disc"><code>count(item)</code> – Returns the number of occurrences of the item.</li></ul><ul id="1e16c31c-8f4a-80a9-9eb9-e8f5e24cb532" class="bulleted-list"><li style="list-style-type:disc"><code>sort()</code> – Sorts the list in ascending order (modifies the list in place).</li></ul><ul id="1e16c31c-8f4a-807b-915b-cc5438bf36a9" class="bulleted-list"><li style="list-style-type:disc"><code>reverse()</code> – Reverses the order of the list.</li></ul><ul id="1e16c31c-8f4a-8014-b7fb-d3aff8faa14e" class="bulleted-list"><li style="list-style-type:disc"><code>copy()</code> – Returns a shallow copy of the list.</li></ul><ul id="1e16c31c-8f4a-80f8-80b6-e6e48ac4e1e1" class="bulleted-list"><li style="list-style-type:disc"><code>clear()</code> – Removes all items from the list.</li></ul></details></li></ul><p id="1e16c31c-8f4a-8055-8342-ccbb60ac421f" class="">Example:<div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-80e7-ac90-ede31d6e7d9e" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_list = [1, 2, 3]
+my_list.append(4)</code></pre></div></p></div></div><hr id="1e16c31c-8f4a-8061-993c-dba00ca56ab1"/><div id="1e16c31c-8f4a-80e6-8c2e-cd07ebb7c845" class="column-list"><div id="1e16c31c-8f4a-80c2-b330-cb07ef00405a" style="width:50%" class="column"><h3 id="1e16c31c-8f4a-8084-b632-eb8d635bedd5" class="">Sets</h3><ul id="1e16c31c-8f4a-80d1-bfb3-f691aaf5e75c" class="bulleted-list"><li style="list-style-type:disc"><strong>Mutable, iterable and unordered</strong> collection of <strong>unique</strong> elements.</li></ul><ul id="1e16c31c-8f4a-80b0-9104-e2298086196d" class="bulleted-list"><li style="list-style-type:disc">Defined with <code>{}</code> or <code>set()</code>.</li></ul><ul id="1e16c31c-8f4a-80de-9009-ddea990758f2" class="bulleted-list"><li style="list-style-type:disc">Example:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-80ae-a844-e7a71a15973e" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_set = {1, 2, 3, 3}  # {1, 2, 3}</code></pre></li></ul></div><div id="1e16c31c-8f4a-8004-a441-e485586453b6" style="width:50%" class="column"><h3 id="1e16c31c-8f4a-80d9-915b-db97f7a4aff6" class="">Dictionaries</h3><ul id="1e16c31c-8f4a-80c7-8f80-f48e650dbc91" class="bulleted-list"><li style="list-style-type:disc"><strong>Key-value</strong> pairs.</li></ul><ul id="1e16c31c-8f4a-80cf-80e1-fac3fcc9a92f" class="bulleted-list"><li style="list-style-type:disc">Defined with curly braces <code>{}</code>.</li></ul><ul id="1e16c31c-8f4a-803c-bdf9-f8cbadaa7b33" class="bulleted-list"><li style="list-style-type:disc">Example:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-80be-a677-f01c8c7f668a" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">my_dict = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25}
+print(my_dict[&quot;name&quot;])</code></pre></li></ul></div></div><hr id="1e16c31c-8f4a-80e0-b60b-dbe0bc936ec6"/><h1 id="1e16c31c-8f4a-8079-a138-e07401aa5c72" class="">Conditionals</h1><ul id="1e16c31c-8f4a-80ec-88ab-f35d3ac5137e" class="bulleted-list"><li style="list-style-type:disc">Decision making with <code>if</code>, <code>elif</code>, <code>else</code>.</li></ul><ul id="1e16c31c-8f4a-809d-9f98-e43451de93be" class="bulleted-list"><li style="list-style-type:disc">Once one branch runs, the rest are ignored.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-8049-ab37-e888cf806c75" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">if x &gt; 0:
+    print(&quot;Positive&quot;)
+elif x == 0:
+    print(&quot;Zero&quot;)
+else:
+    print(&quot;Negative&quot;)</code></pre></li></ul><ul id="1e16c31c-8f4a-8024-915e-ccf72ddec374" class="bulleted-list"><li style="list-style-type:disc">elif vs else<ul id="1e16c31c-8f4a-80ab-bb3c-d0a035e2435c" class="bulleted-list"><li style="list-style-type:circle">elif (short for “else if”) - can have as many as needed</li></ul><ul id="1e16c31c-8f4a-8031-bb65-eb99376982f9" class="bulleted-list"><li style="list-style-type:circle">else - comes last; a catch all case</li></ul></li></ul><hr id="1e16c31c-8f4a-8038-9788-e5850dc5b650"/><h1 id="1e16c31c-8f4a-80ae-857f-ecff9d0cd10b" class="">Loops</h1><ul id="1e16c31c-8f4a-80b4-a5d6-fb63ba2cd367" class="bulleted-list"><li style="list-style-type:disc"><strong>For loop</strong>: iterate over a sequence.</li></ul><ul id="1e16c31c-8f4a-809d-a736-f050c3a93215" class="bulleted-list"><li style="list-style-type:disc"><strong>While loop</strong>: repeat while condition is True.</li></ul><ul id="1e16c31c-8f4a-808c-95af-c7280cfd0f90" class="bulleted-list"><li style="list-style-type:disc">Examples:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-80dc-9858-e7aa85e536a8" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all"># Loop through a list
+fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+for fruit in fruits:
+    print(f&quot;I love {fruit}!&quot;)
+
+# Prints 0, 1, 2, 3, 4
+for i in range(5):
+    print(f&quot;Number: {i}&quot;)
+
+# A countdown using while loop
+count = 5
+while count &gt; 0:
+    print(f&quot;Counting down: {count}&quot;)
+    count -= 1  # Reduce count by 1 each time</code></pre></li></ul><ul id="1e16c31c-8f4a-8025-b978-fb8e5c17feaa" class="bulleted-list"><li style="list-style-type:disc"><strong>Control Statements</strong><ul id="1e16c31c-8f4a-8018-a2f3-e55704a687bb" class="bulleted-list"><li style="list-style-type:circle"><code>break</code>: Exits the loop early.</li></ul><ul id="1e16c31c-8f4a-802d-a0b9-fbf5363e593b" class="bulleted-list"><li style="list-style-type:circle"><code>continue</code>: Skips the current iteration.</li></ul><ul id="1e16c31c-8f4a-80aa-b29a-f03c4f872490" class="bulleted-list"><li style="list-style-type:circle"><code>pass</code>: Acts as a placeholder (does nothing).</li></ul></li></ul><hr id="1e16c31c-8f4a-808c-a468-e23f859f5218"/><h3 id="1e16c31c-8f4a-802e-8412-e91255b8867a" class="">Reading and Writing Files</h3><ul id="1e16c31c-8f4a-80b8-ab16-e5a7814aa359" class="bulleted-list"><li style="list-style-type:disc">Open files with <code>open()</code>.</li></ul><ul id="1e16c31c-8f4a-802b-8e6f-f7286f4d805a" class="bulleted-list"><li style="list-style-type:disc">Example:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-8059-9fae-fb6cd4305f7b" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">with open(&#x27;file.txt&#x27;, &#x27;r&#x27;) as textfile:
+    content = textfile.read()
+
+with open(&#x27;file.txt&#x27;, &#x27;w&#x27;) as textfile:
+    textfile.write(&quot;Hello World&quot;)</code></pre></li></ul><ul id="1e16c31c-8f4a-8034-a255-ed26580aad19" class="bulleted-list"><li style="list-style-type:disc"><strong>With </strong>modes<ul id="1e16c31c-8f4a-800d-bdde-d41dbda5c110" class="bulleted-list"><li style="list-style-type:circle"><code>r</code><strong> (Read mode)</strong> – Opens a file for reading. Raises an error if the file doesn’t exist.</li></ul><ul id="1e16c31c-8f4a-80a8-b074-f67a830bc01a" class="bulleted-list"><li style="list-style-type:circle"><code>w</code><strong> (Write mode)</strong> – Opens a file for writing. Creates a new file if it doesn’t exist, but <strong><span style="border-bottom:0.05em solid">overwrites</span></strong> existing content.</li></ul><ul id="1e16c31c-8f4a-8026-8e67-fb0ec31968f8" class="bulleted-list"><li style="list-style-type:circle"><code>a</code><strong> (Append mode)</strong> – Opens a file for writing, but <strong><span style="border-bottom:0.05em solid">does not overwrite</span></strong> existing content. Adds new content at the end.</li></ul><ul id="1e16c31c-8f4a-809e-944a-e033c2ae1069" class="bulleted-list"><li style="list-style-type:circle"><code>x</code><strong> (Exclusive creation mode)</strong> – Creates a new file and opens it for writing. <strong>Fails if the file already exists</strong>.</li></ul></li></ul><ul id="1e16c31c-8f4a-8054-a7f5-c26a37ad2208" class="bulleted-list"><li style="list-style-type:disc"><strong>With </strong>statement<ul id="1e16c31c-8f4a-805c-ba6f-dfac38de6462" class="bulleted-list"><li style="list-style-type:circle">ensures automatic file closure, reducing potential errors</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-8042-ac80-dd7db29efde6" class="code"><code class="language-Python">with open(&quot;example.txt&quot;, &quot;r&quot;) as file:
+    content = file.read()
+    print(content)  # File automatically closes after this block</code></pre></li></ul><ul id="1e16c31c-8f4a-80c5-a745-fa7a1f7efa2e" class="bulleted-list"><li style="list-style-type:disc">File Input Output <strong>Methods</strong><ul id="1e16c31c-8f4a-8049-88c0-daab6bfed29c" class="bulleted-list"><li style="list-style-type:circle"><code>read(size)</code> - Read up to size bytes/chars. If omitted or negative, reads the rest of the file into one string</li></ul><ul id="1e16c31c-8f4a-8040-8b17-fdcc0ba0e8db" class="bulleted-list"><li style="list-style-type:circle"><code>write(string)</code> - Writes string into file</li></ul><ul id="1e16c31c-8f4a-80a4-88d9-ce37a5b9f4dd" class="bulleted-list"><li style="list-style-type:circle"><code>seek(offset, whence)</code> - Move the file’s “cursor” to byte position offset.<ul id="1e16c31c-8f4a-8079-be6c-d8a4fcb8354f" class="bulleted-list"><li style="list-style-type:square">whence lets you choose start/end/current</li></ul><ul id="1e16c31c-8f4a-80aa-9417-dc213253bed7" class="bulleted-list"><li style="list-style-type:square"><code>0</code> - Start</li></ul><ul id="1e16c31c-8f4a-80b2-9fc9-cabd28dd5d83" class="bulleted-list"><li style="list-style-type:square"><code>1</code> - Current</li></ul><ul id="1e16c31c-8f4a-805a-8d3c-c6f1d84362bf" class="bulleted-list"><li style="list-style-type:square"><code>2</code> - End</li></ul></li></ul><ul id="1e16c31c-8f4a-80bf-9733-f2bdcadf1b76" class="bulleted-list"><li style="list-style-type:circle"><code>close()</code> - Close the file. (When you use with, it’s called automatically at block exit)</li></ul></li></ul><hr id="1e16c31c-8f4a-8051-a54d-d64bcbc36494"/><h3 id="1e16c31c-8f4a-806a-bf24-c2b5fa0ffa5c" class="">User Input</h3><ul id="1e16c31c-8f4a-80c3-846e-e019e4c3339b" class="bulleted-list"><li style="list-style-type:disc"><code>input()</code> - Get input from the user:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-80ed-8c90-d32bf526599e" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">name = input(&quot;Enter your name: &quot;)
+age = int(input(&quot;Enter your age: &quot;))</code></pre></li></ul><hr id="1e16c31c-8f4a-80a1-948e-c6cab1b84422"/><h3 id="1e16c31c-8f4a-8019-a70d-d05f8e89a54c" class="">Exceptions and Error Handling</h3><div id="1e16c31c-8f4a-800b-a0d1-de0babe10232" class="column-list"><div id="1e16c31c-8f4a-8036-b0c0-e6672ec716bd" style="width:50%" class="column"><ul id="1e16c31c-8f4a-8014-826b-d2914623549a" class="bulleted-list"><li style="list-style-type:disc">Catch errors with <code>try</code>, <code>except</code>  block<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-8052-a8e6-ed3889b92d87" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">try:
+    data = json.loads(text)
+except (ValueError, TypeError):
+    print(&quot;Bad or missing data!&quot;)</code></pre><p id="1e36c31c-8f4a-803f-b05e-c6878bface00" class="">
+</p></li></ul></div><div id="1e16c31c-8f4a-801c-a0d2-fcee7c752ef5" style="width:50%" class="column"><ul id="1e16c31c-8f4a-804d-8645-f3c73ccd6fed" class="bulleted-list"><li style="list-style-type:disc"><code>else</code> clause - Runs only if no exception<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-8000-90df-c8fa15bcc1ca" class="code"><code class="language-Python">try:
+    f = open(path)
+except FileNotFoundError:
+    print(&quot;No such file&quot;)
+else:
+    contents = f.read()
+    f.close()</code></pre></li></ul></div></div><div id="1e16c31c-8f4a-80e8-9109-f8066b67c4dc" class="column-list"><div id="1e16c31c-8f4a-8031-98fa-c616b2ab6534" style="width:50%" class="column"><ul id="1e16c31c-8f4a-801b-ae34-df0f1f494ac1" class="bulleted-list"><li style="list-style-type:disc"><code>finally</code> clause - Always runs, whether an exception occurred or not<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-8072-a473-ffba5196d8ad" class="code"><code class="language-Python">try:
+    conn = open_connection()
+    do_work(conn)
+except NetworkError as e:
+    log(e)
+finally:
+    conn.close()</code></pre></li></ul></div><div id="1e16c31c-8f4a-8028-84f6-c12a0b0ac5ed" style="width:50%" class="column"><ul id="1e16c31c-8f4a-8001-a57a-ca0ec8c3850e" class="bulleted-list"><li style="list-style-type:disc"><code>raise</code> clause - Signal an error yourself<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-803a-bd6b-c8442bb2105f" class="code"><code class="language-Python">def withdraw(balance, amount):
+    if amount &gt; balance:
+        raise ValueError(&quot;Insufficient funds&quot;)
+    return balance - amount</code></pre><p id="1e16c31c-8f4a-80a2-9bc4-e25fda606901" class="">
+</p></li></ul></div></div><hr id="1e16c31c-8f4a-8078-8526-ee7b1570bcc8"/><h3 id="1e16c31c-8f4a-808b-9e9b-e5175827279e" class="">Comprehensions</h3><ul id="1e16c31c-8f4a-80c3-b3ba-e153127c7c7a" class="bulleted-list"><li style="list-style-type:disc">Short way to create lists, sets, or dicts.</li></ul><ul id="1e16c31c-8f4a-801e-9125-de2e4694c2b1" class="bulleted-list"><li style="list-style-type:disc">Examples:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-800c-b122-e63fef18f53a" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">squares = [x**2 for x in range(5)]
+even_numbers = {x for x in range(10) if x % 2 == 0}
+name_lengths = {name: len(name) for name in [&quot;Alice&quot;, &quot;Bob&quot;]}</code></pre></li></ul><hr id="1e16c31c-8f4a-8015-ae50-d72189b42df0"/><h3 id="1e16c31c-8f4a-80bd-ad7b-e8b0a7cccc20" class="">Functions and Code Reuse</h3><ul id="1e16c31c-8f4a-802e-8a68-f19fc51180a6" class="bulleted-list"><li style="list-style-type:disc">Define functions with <code>def</code>.</li></ul><ul id="1e16c31c-8f4a-80d3-a083-f65880f8f69d" class="bulleted-list"><li style="list-style-type:disc">Example:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-800b-87bf-d2a3d724f4dd" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def greet(name):
+    return (f&quot;Hello, {name}&quot;)
+
+print(greet(&quot;Alice&quot;))
+</code></pre></li></ul><hr id="1e16c31c-8f4a-8095-9689-c8a2656a58a4"/><h3 id="1e16c31c-8f4a-800e-b8ce-e02ccf7ece9f" class="">Lambdas</h3><ul id="1e16c31c-8f4a-8078-bc64-e1a5a0830598" class="bulleted-list"><li style="list-style-type:disc">Anonymous (one-line) functions.</li></ul><ul id="1e16c31c-8f4a-8065-adbc-dc34dd1c64e2" class="bulleted-list"><li style="list-style-type:disc">Syntax: <code>lambda arguments: expression</code></li></ul><ul id="1e16c31c-8f4a-8028-b2c6-d36477a67dee" class="bulleted-list"><li style="list-style-type:disc">Example:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1e16c31c-8f4a-8035-b9b9-d4157e90a8eb" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">add = lambda x, y: x + y
+print(add(2, 3))  # 5
+</code></pre></li></ul><hr id="1e16c31c-8f4a-8056-a5c2-c1989ce3eda5"/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
