@@ -53,7 +53,7 @@ for i in range(1, n+1):
     x *= i
 print(x)
 
-print(f'\n\tBooleans and Operators')
+print(f'\n\tBooleans & Operators')
 print(f'\t------------------------\n')
 
 #Prompt the user for two numbers and print whether they are equal,
@@ -134,3 +134,6 @@ for i in flags:
         break
 print(f'\nSAME' if all_true == True else '\nDIFFERENT')
 
+
+print(f'\n\tString Formatting & Escape Characters')
+print(f'\t------------------------\n')
